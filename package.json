@@ -1,0 +1,26 @@
+{
+  "name": "home-manager",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --parallel --filter @hm/server --filter @hm/web run dev",
+    "build": "pnpm -r run build",
+    "typecheck": "pnpm -r run typecheck",
+    "lint": "eslint .",
+    "privacy:check": "node scripts/check-public-content.mjs",
+    "test": "pnpm --filter @hm/server run test",
+    "e2e": "playwright test",
+    "start": "pnpm --filter @hm/server run start",
+    "start:prod": "node scripts/start-production.mjs",
+    "user:init": "pnpm --filter @hm/server run user:init",
+    "test:remote": "python scripts/deploy/create-network-test-fixtures.py && node scripts/deploy/test-autodl-http.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "eslint": "^9.39.0",
+    "eslint-plugin-vue": "^10.11.0",
+    "globals": "^16.4.0",
+    "typescript-eslint": "^8.70.0"
+  }
+}

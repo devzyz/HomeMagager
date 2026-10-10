@@ -1,0 +1,7 @@
+packages:
+  - apps/*
+allowBuilds:
+  better-sqlite3: true
+  esbuild: true
+minimumReleaseAgeExclude:
+  - '@vitejs/plugin-vue@6.0.9'

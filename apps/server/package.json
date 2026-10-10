@@ -1,0 +1,36 @@
+{
+  "name": "@hm/server",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "user:init": "tsx src/cli/user-init.ts",
+    "user:reset-password": "tsx src/cli/reset-password.ts",
+    "backup:restore": "tsx src/cli/backup-restore.ts"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^11.1.2",
+    "@fastify/multipart": "^10.1.1",
+    "@fastify/rate-limit": "^11.2.0",
+    "@fastify/static": "^10.1.3",
+    "@node-rs/argon2": "^2.2.1",
+    "@sinclair/typebox": "^0.34.52",
+    "better-sqlite3": "^12.11.1",
+    "exceljs": "^4.4.0",
+    "fastify": "^5.12.4",
+    "pino": "^10.3.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^24.0.0",
+    "jszip": "^3.10.2",
+    "tsx": "^4.23.13",
+    "typescript": "~5.9.3",
+    "vitest": "^5.0.0"
+  }
+}
